@@ -1,0 +1,30 @@
+
+<div class="inMiddle">
+<div class="card" style="width: 24rem;">
+  <p>Show your presence on social media</p>
+  <hr>
+    <div class="container">
+      <form #f="ngForm" (ngSubmit)="goPersonal(f.value)">
+          <div class="form-group">
+            <label for="twitter"></label>
+            <input required ngModel name="twitter" id="twitter" type="text" class="form-control" placeholder="Twitter" #twitter="ngModel">
+            <div class="alert alert-danger" *ngIf="twitter.touched && !twitter.valid">Please enter you twitter Id</div>
+          </div>
+          <div class="form-group">
+            <label for="googlePlus"></label>
+            <input required ngModel name="google" id="googlePlus" type="text" class="form-control" placeholder="Google Plus" #google="ngModel">
+            <div class="alert alert-danger" *ngIf="google.touched && !google.valid">Please enter you Google Plus</div>
+          </div>
+          <div class="form-group">
+            <label for="facebook"></label>
+            <input required ngModel name="facebook" id="facebook" type="text" class="form-control" placeholder="Facebook" #facebook="ngModel">
+            <div class="alert alert-danger" *ngIf="facebook.touched && !facebook.valid">Please enter you Facebook Id</div>
+          </div>
+          <div class="btn-container">
+          <button class="btn btn-primary" type="button" (click)="gorRegister()">Previous</button>
+          <button class="btn btn-primary" [disabled]="!f.valid" >Next</button>
+        </div>
+        </form>
+      </div>   
+  </div>
+</div>
